@@ -78,43 +78,8 @@
 								<ul class="features">
 									<li>
 																				<!-- HTML for the icon -->
-										<a href="#" class="icon solid major style1 fa-file-alt" onclick="showDownloadPopup()" title="Download Memoire">
+										<a href="Resources/Memoire_VF.pdf" download="Memoire - Version Francaise" class="icon solid major style1 fa-file-alt" title="Download Memoire">
 											<span class="sr-only">Download Memoire</span>
-										</a>
-
-										<!-- Modal for selecting language -->
-										<div id="downloadModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
-											<div style="background: white; padding: 20px; border-radius: 10px; text-align: center;">
-												<h2>Select a Version</h2>
-												<p>Which version of my Memoire would you like to download?</p>
-												<button onclick="downloadFile('Memoire_VE.pdf')">English Version</button>
-												<button onclick="downloadFile('Memoire_VF.pdf')">French Version</button>
-												<br /><br />
-												<button onclick="closeDownloadPopup()" style="background: red; color: white; padding: 5px 10px; border: none; border-radius: 5px;">Cancel</button>
-											</div>
-										</div>
-
-										<script>
-											// Function to show the popup
-											function showDownloadPopup() {
-												document.getElementById('downloadModal').style.display = 'flex';
-											}
-
-											// Function to close the popup
-											function closeDownloadPopup() {
-												document.getElementById('downloadModal').style.display = 'none';
-											}
-
-											// Function to handle the download
-											function downloadFile(filename) {
-												const link = document.createElement('a');
-												link.href = `Resources/${filename}`; // Adjust the path if needed
-												link.download = filename;
-												link.click();
-												closeDownloadPopup();
-											}
-										</script>
-
 
 										<h3>Land finance in China</h3>
 										<p>How does the Chinese system of land finance impact the Chinese real estate market?
