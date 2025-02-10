@@ -35,6 +35,9 @@
                                 if (euCountries.includes(data.country)) {
                                         document.getElementById("cookie-banner").style.display = "block";
                                 }
+				else {
+					enableTracking();
+				}
                         } catch (error) {
                                 console.error("Error checking user location:", error);
                         }
