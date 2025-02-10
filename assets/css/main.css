@@ -1884,6 +1884,24 @@ input, select, textarea {
 		.button.small {
 			font-size: 0.8em;
 		}
+		.accept-button {
+    			background-color: #4CAF50;  /* Green */
+    			color: white;
+		}
+
+		.reject-button {
+    			background-color: #f44336;  /* Red */
+    			color: white;
+		}
+
+		/* Ensure hover effects match */
+		.accept-button:hover {
+    			background-color: #45a049;
+		}
+
+		.reject-button:hover {
+    			background-color: #d32f2f;
+		}
 
 		input[type="submit"].large,
 		input[type="reset"].large,
