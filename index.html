@@ -52,7 +52,14 @@
                 });
 
                 function enableTracking() {
-                        // Insert your Google Analytics or other tracking script here
+			<!-- Google tag (gtag.js) -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=G-H2VW4JY0DL"></script>
+			<script>
+  				window.dataLayer = window.dataLayer || [];
+  				function gtag(){dataLayer.push(arguments);}
+  				gtag('js', new Date());
+
+  				gtag('config', 'G-H2VW4JY0DL');
                         console.log("Tracking enabled");
                 }
 
@@ -60,7 +67,7 @@
         </script>
 
 	</head>
-	<!-- Google tag (gtag.js) -->
+	<!-- Google tag (gtag.js)
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-H2VW4JY0DL"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -68,6 +75,7 @@
   gtag('js', new Date());
 
   gtag('config', 'G-H2VW4JY0DL');
+	 -->
 </script>
 	<body class="is-preload">
 
