@@ -71,6 +71,13 @@
   gtag('js', new Date());
 
   gtag('config', 'G-H2VW4JY0DL');
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR_MEASUREMENT_ID');
+  </script>
 	 
 </script>
 	<body class="is-preload">
@@ -263,6 +270,30 @@
 			</div>
 
 		<!-- Scripts -->
+			<script>
+    				window.addEventListener('DOMContentLoaded', function () {
+     				const urlParams = new URLSearchParams(window.location.search);
+      				const source = urlParams.get('utm_source');
+      				const campaign = urlParams.get('utm_campaign');
+
+      				if (source) {
+        				gtag('event', 'source_visit', {
+          				event_category: 'traffic_source',
+          				event_label: `${source}${campaign ? ' | ' + campaign : ''}`
+        				});
+      				}
+
+      				const resumeLinks = document.querySelectorAll('a[href*="Ethan_Robertson_Resume.pdf"]');
+      				resumeLinks.forEach(link => {
+        				link.addEventListener('click', function () {
+          				gtag('event', 'resume_click', {
+            				event_category: 'engagement',
+            				event_label: source || 'direct'
+          				});
+        				});
+      				});
+    				});
+  			</script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
