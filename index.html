@@ -1,4 +1,4 @@
-	<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <!--
 	Stellar by HTML5 UP
 	html5up.net | @ajlkn
@@ -6,80 +6,88 @@
 -->
 <html>
 	<head>
-			  
-			  
 		<title>Ethan W. Robertson | Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		        <!-- Cookie Consent Banner -->
-        <div id="cookie-banner" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 400px; background: #222; color: white; padding: 15px; border-radius: 10px; text-align: center; z-index: 1000;">
-                <p>This site uses cookies to improve your experience. You can accept or reject non-essential cookies.</p>
-                <button id="accept-cookies" class="button accept-button">Accept</button>
-		<button id="reject-cookies" class="button reject-button">Reject</button>
+		
+		<style>
+			#back-to-top {
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				display: none;
+				background: rgba(255, 255, 255, 0.05);
+				color: white;
+				width: 50px;
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+				border-radius: 25px;
+				cursor: pointer;
+				box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+				transition: all 0.2s ease-in-out;
+			}
+			#back-to-top:hover {
+				background: rgba(255, 255, 255, 0.1);
+			}
+		</style>
+		
+		<!-- Cookie Consent Banner -->
+		<div id="cookie-banner" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 400px; background: #222; color: white; padding: 15px; border-radius: 10px; text-align: center; z-index: 1000;">
+			<p>This site uses cookies to improve your experience. You can accept or reject non-essential cookies.</p>
+			<button id="accept-cookies" class="button accept-button">Accept</button>
+			<button id="reject-cookies" class="button reject-button">Reject</button>
+		</div>
 
-        </div>
+		<!-- Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-H2VW4JY0DL"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-H2VW4JY0DL');
+		</script>
 
-        <script>
-                async function checkUserLocation() {
-                        try {
-                                let consentGiven = localStorage.getItem("cookieConsent");
+		<script>
+			async function checkUserLocation() {
+				try {
+					let consentGiven = localStorage.getItem("cookieConsent");
+					if (consentGiven) return;
 
-                                // If user has already made a choice, do nothing
-                                if (consentGiven) return;
+					let response = await fetch("https://ipinfo.io/json?token=6fa17a252a23c7");
+					let data = await response.json();
+					let euCountries = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"];
 
-                                // Get user location via IP lookup
-                                let response = await fetch("https://ipinfo.io/json?token=6fa17a252a23c7"); // Replace with your API token
-                                let data = await response.json();
-                                let euCountries = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"];
-
-                                if (euCountries.includes(data.country)) {
-                                        document.getElementById("cookie-banner").style.display = "block";
-                                }
-				else {
-					enableTracking();
+					if (euCountries.includes(data.country)) {
+						document.getElementById("cookie-banner").style.display = "block";
+					} else {
+						enableTracking();
+					}
+				} catch (error) {
+					console.error("Error checking user location:", error);
 				}
-                        } catch (error) {
-                                console.error("Error checking user location:", error);
-                        }
-                }
+			}
 
-                document.getElementById("accept-cookies").addEventListener("click", function () {
-                        localStorage.setItem("cookieConsent", "accepted");
-                        document.getElementById("cookie-banner").style.display = "none";
-                        enableTracking();
-                });
+			document.getElementById("accept-cookies").addEventListener("click", function() {
+				localStorage.setItem("cookieConsent", "accepted");
+				document.getElementById("cookie-banner").style.display = "none";
+				enableTracking();
+			});
 
-                document.getElementById("reject-cookies").addEventListener("click", function () {
-                        localStorage.setItem("cookieConsent", "rejected");
-                        document.getElementById("cookie-banner").style.display = "none";
-                });
+			document.getElementById("reject-cookies").addEventListener("click", function() {
+				localStorage.setItem("cookieConsent", "rejected");
+				document.getElementById("cookie-banner").style.display = "none";
+			});
 
-                function enableTracking() {
-		}
+			function enableTracking() {
+				// Tracking functionality can be added here
+			}
 
-                checkUserLocation();
-        </script>
-
+			checkUserLocation();
+		</script>
 	</head>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H2VW4JY0DL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-H2VW4JY0DL');
-  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_MEASUREMENT_ID"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'YOUR_MEASUREMENT_ID');
-  </script>
-	 
-</script>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -87,9 +95,8 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<!-- <span class="logo"><img src="images/logo.svg" alt="" /></span> 
-						-->
-						<!-- <button onclick="switchToFrench()" class="lang-button">Français</button> -->
+						<!-- <span class="logo"><img src="images/logo.svg" alt="" /></span> -->
+						<button onclick="window.location.href='index_fr.html'" class="lang-button" style="position: absolute; top: 20px; right: 20px; display: inline-block; height: 2.25em; line-height: 2.25em; padding: 0 1.25em; border: 0; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15); background: rgba(255, 255, 255, 0.05); color: white; cursor: pointer; text-align: center; text-decoration: none; white-space: nowrap; transition: all 0.2s ease-in-out;">Français</button>
 						<h1>Ethan Robertson's Portfolio</h1>
 						<p>Thanks for visiting!  Feel free to explore the sections below<br />
 						<a href="mailto:erobertson753@outlook.com">Contact me</a></p>
@@ -99,10 +106,9 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="#intro" class="active">About Me</a></li>
-							<li><a href="#first">Work</a></li>
-							<li><a href="#second">Skills</a></li> <!--
-							<li><a href="#cta">More Information</a></li>
-							-->
+							<li><a href="#featured">Featured Projects</a></li>
+							<li><a href="#second">Skills</a></li>
+							<li><a href="projects.html">All Projects</a></li>
 						</ul>
 					</nav>
 
@@ -120,7 +126,7 @@
 										Computational and Applied Mathematics and Statistics (CAMS).  
 										I'm passionate about quantitative analysis, and I love applying
 										my skills in data analytics, applied mathematics, and econometrics to solve 
-										interesting problems that I've found!  Currently, I’m working as a Research Analyst 
+										interesting problems that I've found!  Currently, I'm working as a Research Analyst 
 										on the China Development Finance Program team at AidData—a research lab at 
 										William & Mary.  In my free time, I enjoy reading, watching soccer, baking, and 
 										playing board games!</p>
@@ -132,52 +138,24 @@
 								</div>
 							</section>
 
-						<!-- Work -->
-							<section id="first" class="main special">
+						<!-- Featured Projects -->
+							<section id="featured" class="main special">
 								<header class="major">
-									<h2>Recent Projects</h2>
+									<h2>Featured Projects</h2>
+									<p>Check out my <a href="projects.html">complete portfolio</a> for more projects</p>
 								</header>
-								<ul class="features">
-									<li>
-																				<!-- HTML for the icon -->
-										<a href="Resources/Memoire_VF.pdf" download="Memoire - Version Francaise" class="icon solid major style1 fa-file-alt" title="Download Memoire"></i></a>
-										
-
-										<h3>Land finance in China</h3>
-										<p>How the Chinese land finance system shapes the real estate market—and what changes may be on the horizon.</p>
-									</li>
-									<li>
-										<a href="Resources/UCL_Elo_Project_Report.pdf" download="UCL Elo Project Report" class="icon major style5 fa-futbol" title="Download project report"></i></a>
-										<h3>Applying the Elo system to soccer</h3>
-										<p>How I built a model that predicts match outcomes with 88% accuracy.</p>
-										<!-- <p><a href="Resources/UCL_Ro32_Probable_Match_Winners.pdf" download="UCL Ro32 Win Probabilities.pdf" class="download-btn">Download Ro32 Win Probabilities</a></> -->
-									</li>
-									<li>
-										<!--<span class="icon major style5 fa-money-bill-alt"></span>-->
- 										<!--<FontAwesomeIcon icon="fa-solid fa-money-bill-trend-up" />-->
-										<a href="Resources/Donchian_Project_Report.pdf" download="Donchian Channel Breakout Project Report" class="icon major style3 fa-money-bill-alt" title="Download project report"></i></a>						
-										<h3>Algorithmic Trading</h3>
- 										<p>Optimizing the Donchian Channel Breakout Trading Strategy for the Ethereum Market (ETHUSDT).</p>
-									</li>
-									
-								<ul class="features">
-									<li>
-																				
-										<a href="Resources/Fama-MacBeth_Project_Report.pdf" download="Macro Sensitivity Project Report" class="icon solid major style5 fa-file-alt" title="Download Project Report"></i></a>
-										
-
+								<div class="features" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2em;">
+									<section style="flex: 1; min-width: 300px; max-width: 45%; text-align: center;">
+										<a href="Resources/Fama-MacBeth_Project_Report.pdf" download="Macro Sensitivity Project Report" class="icon solid major style5 fa-file-alt" style="font-size: 2em; margin-bottom: 1em;" title="Download Project Report"></a>
 										<h3>Macro Sensitivity Analysis</h3>
-										<p>Which Financial and Banking firms represent investment opportunities in today's market</p>
-									</li>
-									
-									
-								</ul>
-								<!-- <footer class="major">
-									<ul class="actions special">
-										<li><a href="mailto:erobertson753@outlook.com" class="button">Learn More</a></li>
-									</ul>
-								</footer> 
-								-->
+										<p style="text-align: justify;">An in-depth analysis of financial and banking firms, identifying investment opportunities in today's market through advanced statistical modeling and macroeconomic factor analysis.</p>
+									</section>
+									<section style="flex: 1; min-width: 300px; max-width: 45%; text-align: center;">
+										<a href="Resources/Donchian_Project_Report.pdf" download="Donchian Channel Breakout Project Report" class="icon major style3 fa-money-bill-alt" style="font-size: 2em; margin-bottom: 1em;" title="Download project report"></a>
+										<h3>Algorithmic Trading Strategy</h3>
+										<p style="text-align: justify;">Development and optimization of the Donchian Channel Breakout Trading Strategy for the Ethereum Market (ETHUSDT).</p>
+									</section>
+								</div>
 							</section>
 
 						<!-- Skills -->
@@ -218,22 +196,6 @@
 								</footer>
 							</section>
 
-						<!-- More Information 
-							<section id="cta" class="main special">
-								<header class="major">
-									<h2>Congue imperdiet</h2>
-									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
-								</header>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="generic.html" class="button primary">Get Started</a></li>
-										<li><a href="generic.html" class="button">Learn More</a></li>
-									</ul>
-								</footer>
-							</section>
-						-->
-
 					</div>
 
 				<!-- Footer -->
@@ -269,31 +231,49 @@
 			
 			</div>
 
+		<!-- Back to Top Button -->
+		<a id="back-to-top" href="#" title="Back to top">↑</a>
+
 		<!-- Scripts -->
 			<script>
-    				window.addEventListener('DOMContentLoaded', function () {
-     				const urlParams = new URLSearchParams(window.location.search);
-      				const source = urlParams.get('utm_source');
-      				const campaign = urlParams.get('utm_campaign');
+				window.addEventListener('DOMContentLoaded', function() {
+					const urlParams = new URLSearchParams(window.location.search);
+					const source = urlParams.get('utm_source');
+					const campaign = urlParams.get('utm_campaign');
 
-      				if (source) {
-        				gtag('event', 'source_visit', {
-          				event_category: 'traffic_source',
-          				event_label: `${source}${campaign ? ' | ' + campaign : ''}`
-        				});
-      				}
+					if (source) {
+						gtag('event', 'source_visit', {
+							event_category: 'traffic_source',
+							event_label: `${source}${campaign ? ' | ' + campaign : ''}`
+						});
+					}
 
-      				const resumeLinks = document.querySelectorAll('a[href*="Ethan_Robertson_Resume.pdf"]');
-      				resumeLinks.forEach(link => {
-        				link.addEventListener('click', function () {
-          				gtag('event', 'resume_click', {
-            				event_category: 'engagement',
-            				event_label: source || 'direct'
-          				});
-        				});
-      				});
-    				});
-  			</script>
+					const resumeLinks = document.querySelectorAll('a[href*="Ethan_Robertson_Resume.pdf"]');
+					resumeLinks.forEach(link => {
+						link.addEventListener('click', function() {
+							gtag('event', 'resume_click', {
+								event_category: 'engagement',
+								event_label: source || 'direct'
+							});
+						});
+					});
+				});
+
+				// Back to Top Button
+				window.addEventListener('scroll', function() {
+					var backToTop = document.getElementById('back-to-top');
+					if (window.pageYOffset > 300) {
+						backToTop.style.display = 'block';
+					} else {
+						backToTop.style.display = 'none';
+					}
+				});
+
+				document.getElementById('back-to-top').addEventListener('click', function(e) {
+					e.preventDefault();
+					window.scrollTo({top: 0, behavior: 'smooth'});
+				});
+			</script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
