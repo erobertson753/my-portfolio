@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ethan W. Robertson | Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+		<!-- Cookie Consent Banner -->
+		<div id="cookie-banner" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 400px; background: #222; color: white; padding: 15px; border-radius: 10px; text-align: center; z-index: 1000;">
+			<p>Ce site utilise des cookies pour améliorer votre expérience. Vous pouvez accepter ou refuser les cookies non essentiels.</p>
+			<button id="accept-cookies" class="button accept-button">Accepter</button>
+			<button id="reject-cookies" class="button reject-button">Refuser</button>
+		</div>
+
+		<!-- Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-H2VW4JY0DL"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-H2VW4JY0DL');
+		</script>
+
+		<script>
+			async function checkUserLocation() {
+				try {
+					let consentGiven = localStorage.getItem("cookieConsent");
+					if (consentGiven) return;
+
+					let response = await fetch("https://ipinfo.io/json?token=6fa17a252a23c7");
+					let data = await response.json();
+					let euCountries = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"];
+
+					if (euCountries.includes(data.country)) {
+						document.getElementById("cookie-banner").style.display = "block";
+					} else {
+						enableTracking();
+					}
+				} catch (error) {
+					console.error("Error checking user location:", error);
+				}
+			}
+
+			document.getElementById("accept-cookies").addEventListener("click", function() {
+				localStorage.setItem("cookieConsent", "accepted");
+				document.getElementById("cookie-banner").style.display = "none";
+				enableTracking();
+			});
+
+			document.getElementById("reject-cookies").addEventListener("click", function() {
+				localStorage.setItem("cookieConsent", "rejected");
+				document.getElementById("cookie-banner").style.display = "none";
+			});
+
+			function enableTracking() {
+				// Tracking functionality can be added here
+			}
+
+			checkUserLocation();
+		</script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<button onclick="window.location.href='index.html'" class="lang-button" style="position: absolute; top: 20px; right: 20px; display: inline-block; height: 2.25em; line-height: 2.25em; padding: 0 1.25em; border: 0; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15); background: rgba(255, 255, 255, 0.05); color: white; cursor: pointer; text-align: center; text-decoration: none; white-space: nowrap; transition: all 0.2s ease-in-out;">English</button>
+						<h1>Portfolio d'Ethan Robertson</h1>
+						<p>Merci de votre visite ! N'hésitez pas à explorer les sections ci-dessous<br />
+						<a href="mailto:erobertson753@outlook.com">Contactez-moi</a></p>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="#intro" class="active">À propos</a></li>
+							<li><a href="#featured">Projets en vedette</a></li>
+							<li><a href="#second">Compétences</a></li>
+							<li><a href="projects_fr.html">Tous mes projets</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- About Me -->
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>À propos de moi</h2>
+										</header>
+										<p>Je suis étudiant en deuxième année au College of William & Mary, où je poursuis une majeure en 
+										Mathématiques et Statistiques Appliquées et Computationnelles (CAMS).  
+										Je suis passionné par l'analyse quantitative, et j'aime appliquer
+										mes compétences en analyse de données, mathématiques appliquées et économétrie pour résoudre 
+										des problèmes intéressants ! Actuellement, je travaille comme Analyste de Recherche 
+										dans l'équipe du Programme de Financement du Développement en Chine à AidData—un laboratoire de recherche 
+										à William & Mary.  Pendant mon temps libre, j'aime lire, regarder le football, faire de la pâtisserie et 
+										jouer à des jeux de société !</p>
+										<ul class="actions">
+											<li><a href="Resources/Ethan_Robertson_Resume.pdf" download="Ethan Robertson Resume.pdf" class="download-btn">Télécharger mon CV</a></li>
+										</ul>
+									</div>
+									<span class="image"><img src="images/Portrait.jpg" alt="" /></span>
+								</div>
+							</section>
+
+						<!-- Featured Projects -->
+							<section id="featured" class="main special">
+								<header class="major">
+									<h2>Projets en vedette</h2>
+									<p>Découvrez mon <a href="projects_fr.html">portfolio complet</a> pour plus de projets</p>
+								</header>
+								<div class="features" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2em;">
+									<section style="flex: 1; min-width: 300px; max-width: 45%; text-align: center;">
+										<a href="Resources/Fama-MacBeth_Project_Report.pdf" download="Macro Sensitivity Project Report" class="icon solid major style5 fa-file-alt" style="font-size: 2em; margin-bottom: 1em;" title="Télécharger le rapport du projet"></a>
+										<h3>Analyse de Sensibilité Macro</h3>
+										<p style="text-align: justify;">Une analyse approfondie des entreprises financières et bancaires, identifiant les opportunités d'investissement sur le marché actuel grâce à une modélisation statistique avancée et une analyse des facteurs macroéconomiques.</p>
+									</section>
+									<section style="flex: 1; min-width: 300px; max-width: 45%; text-align: center;">
+										<a href="Resources/Donchian_Project_Report.pdf" download="Donchian Channel Breakout Project Report" class="icon major style3 fa-money-bill-alt" style="font-size: 2em; margin-bottom: 1em;" title="Télécharger le rapport du projet"></a>
+										<h3>Stratégie de Trading Algorithmique</h3>
+										<p style="text-align: justify;">Développement et optimisation de la stratégie de trading Donchian Channel Breakout pour le marché Ethereum (ETHUSDT).</p>
+									</section>
+								</div>
+							</section>
+
+						<!-- Skills -->
+							<section id="second" class="main special">
+								<header class="major">
+									<h2>Mes compétences</h2>
+								</header>
+								<ul class="statistics">
+									<li class="style1">
+										<span class="icon solid fa-comments"></span>
+										<strong>Français</strong> Courant
+									</li>
+									<li class="style2">
+										<span class="icon solid fa-code-branch"></span>
+										<strong>Python</strong> Compétent
+									</li>
+									<li class="style3">
+										<span class="icon solid fa-chart-bar"></span>
+										<strong>R</strong> Compétent
+									</li>
+									<li class="style4">
+										<span class="icon solid fa-laptop"></span>
+										<strong>SQL</strong> Compétent
+									</li>
+									<li class="style5">
+										<span class="icon solid fa-table"></span>
+										<strong>Excel</strong> Compétent
+									</li>
+								</ul>
+								<p class="content">Avec une solide base en analyse quantitative, modélisation statistique et recherche financière, je maîtrise Python, R et SQL pour la prise de décision basée sur les données. Mes compétences en économétrie, mathématiques appliquées et recherche opérationnelle me permettent de développer des modèles prédictifs et de mener des analyses financières avancées. Je suis également compétent en modélisation financière sur Excel et en évaluation d'entreprise grâce à des ateliers avec Training the Street. Grâce à mes compétences techniques, je peux extraire des informations significatives de jeux de données complexes, que ce soit dans la recherche sur les actions, le financement du développement ou l'analyse sportive. J'excelle dans la résolution de problèmes complexes, et j'aime mettre à profit mes compétences chaque fois que possible !</p>
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="mailto:erobertson753@outlook.com" class="button">Contactez-moi</a></li>
+									</ul>
+								</footer>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<ul class="actions">
+								<li><a href="Resources/Ethan_Robertson_Resume.pdf" download="Ethan Robertson Resume.pdf" class="button">Télécharger mon CV</a></li>
+							</ul>
+						</section>
+						<section>
+							<h2>Mes coordonnées</h2>
+							<dl class="alt">
+								<dt>Téléphone</dt>
+								<dd>(540) 771-0074</dd>
+								<dt>Email</dt>
+								<dd><a href="mailto:erobertson753@outlook.com">erobertson753@outlook.com</a></dd>
+							</dl>
+						</section>
+						<p class="copyright">&copy;Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+			
+			</div>
+
+		<!-- Scripts -->
+			<script>
+				window.addEventListener('DOMContentLoaded', function() {
+					const urlParams = new URLSearchParams(window.location.search);
+					const source = urlParams.get('utm_source');
+					const campaign = urlParams.get('utm_campaign');
+
+					if (source) {
+						gtag('event', 'source_visit', {
+							event_category: 'traffic_source',
+							event_label: `${source}${campaign ? ' | ' + campaign : ''}`
+						});
+					}
+
+					const resumeLinks = document.querySelectorAll('a[href*="Ethan_Robertson_Resume.pdf"]');
+					resumeLinks.forEach(link => {
+						link.addEventListener('click', function() {
+							gtag('event', 'resume_click', {
+								event_category: 'engagement',
+								event_label: source || 'direct'
+							});
+						});
+					});
+				});
+			</script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html> 
