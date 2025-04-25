@@ -226,5 +226,28 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+		<!-- Back to Top Button -->
+		<button id="backToTop" class="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99; background: rgba(255, 255, 255, 0.1); color: white; border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; transition: all 0.3s ease;">
+			<i class="fas fa-arrow-up"></i>
+		</button>
+
+		<script>
+			// Back to Top Button Functionality
+			window.onscroll = function() {
+				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+					document.getElementById("backToTop").style.display = "block";
+				} else {
+					document.getElementById("backToTop").style.display = "none";
+				}
+			};
+
+			document.getElementById("backToTop").addEventListener("click", function() {
+				window.scrollTo({
+					top: 0,
+					behavior: "smooth"
+				});
+			});
+		</script>
+
 	</body>
 </html> 
