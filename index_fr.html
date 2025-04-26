@@ -122,15 +122,20 @@
 									<p>Découvrez mon <a href="projects_fr.html">portfolio complet</a> pour plus de projets</p>
 								</header>
 								<div class="features" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2em;">
-									<section style="flex: 1; min-width: 300px; max-width: 45%; text-align: center;">
+									<section style="flex: 1; min-width: 300px; max-width: 30%; text-align: center;">
 										<a href="Resources/Fama-MacBeth_Project_Report_FR.pdf" download="Macro Sensitivity Project Report" class="icon solid major style5 fa-file-alt" style="font-size: 2em; margin-bottom: 1em;" title="Télécharger le rapport du projet"></a>
-										<h3>Analyse de Sensibilité Macro</h3>
+										<h3><a href="Resources/Fama-MacBeth_Project_Report_FR.pdf" download="Macro Sensitivity Project Report" title="Télécharger le rapport du projet">Analyse de Sensibilité Macro</a></h3>
 										<p style="text-align: justify;">Une analyse approfondie des entreprises financières et bancaires, identifiant les opportunités d'investissement sur le marché actuel grâce à une modélisation statistique avancée et une analyse des facteurs macroéconomiques.</p>
 									</section>
-									<section style="flex: 1; min-width: 300px; max-width: 45%; text-align: center;">
+									<section style="flex: 1; min-width: 300px; max-width: 30%; text-align: center;">
 										<a href="Resources/Donchian_Project_Report_FR.pdf" download="Donchian Channel Breakout Project Report" class="icon major style3 fa-money-bill-alt" style="font-size: 2em; margin-bottom: 1em;" title="Télécharger le rapport du projet"></a>
-										<h3>Stratégie de Trading Algorithmique</h3>
+										<h3><a href="Resources/Donchian_Project_Report_FR.pdf" download="Donchian Channel Breakout Project Report" title="Télécharger le rapport du projet">Stratégie de Trading Algorithmique</a></h3>
 										<p style="text-align: justify;">Développement et optimisation de la stratégie de trading Donchian Channel Breakout pour le marché Ethereum (ETHUSDT).</p>
+									</section>
+									<section style="flex: 1; min-width: 300px; max-width: 30%; text-align: center;">
+										<a href="Resources/Monte_Carlo_Project_Report.pdf" download="Monte Carlo Project Report" class="icon major style2 fa-futbol" style="font-size: 2em; margin-bottom: 1em;" title="Télécharger le rapport du projet"></a>
+										<h3><a href="Resources/Monte_Carlo_Project_Report.pdf" download="Monte Carlo Project Report" title="Télécharger le rapport du projet">Simulation Monte Carlo de la Phase Finale de l'UCL 2024/25</a></h3>
+										<p style="text-align: justify;">Prévision des résultats de la Ligue des Champions de l'UEFA et développement d'une stratégie de paris optimale par simulation Monte Carlo et cotes Elo.</p>
 									</section>
 								</div>
 							</section>
@@ -227,21 +232,19 @@
 			<script src="assets/js/main.js"></script>
 
 		<!-- Back to Top Button -->
-		<button id="backToTop" class="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99; background: rgba(255, 255, 255, 0.1); color: white; border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; transition: all 0.3s ease;">
-			<i class="fas fa-arrow-up"></i>
-		</button>
+		<a id="back-to-top" href="#" title="Retour en haut">↑</a>
 
 		<script>
 			// Back to Top Button Functionality
 			window.onscroll = function() {
 				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-					document.getElementById("backToTop").style.display = "block";
+					document.getElementById("back-to-top").style.display = "block";
 				} else {
-					document.getElementById("backToTop").style.display = "none";
+					document.getElementById("back-to-top").style.display = "none";
 				}
 			};
 
-			document.getElementById("backToTop").addEventListener("click", function() {
+			document.getElementById("back-to-top").addEventListener("click", function() {
 				window.scrollTo({
 					top: 0,
 					behavior: "smooth"

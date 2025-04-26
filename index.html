@@ -145,15 +145,20 @@
 									<p>Check out my <a href="projects.html">complete portfolio</a> for more projects</p>
 								</header>
 								<div class="features" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2em;">
-									<section style="flex: 1; min-width: 300px; max-width: 45%; text-align: center;">
+									<section style="flex: 1; min-width: 300px; max-width: 30%; text-align: center;">
 										<a href="Resources/Fama-MacBeth_Project_Report.pdf" download="Macro Sensitivity Project Report" class="icon solid major style5 fa-file-alt" style="font-size: 2em; margin-bottom: 1em;" title="Download Project Report"></a>
-										<h3>Macro Sensitivity Analysis</h3>
+										<h3><a href="Resources/Fama-MacBeth_Project_Report.pdf" download="Macro Sensitivity Project Report" title="Download Project Report">Macro Sensitivity Analysis</a></h3>
 										<p style="text-align: justify;">An in-depth analysis of financial and banking firms, identifying investment opportunities in today's market through advanced statistical modeling and macroeconomic factor analysis.</p>
 									</section>
-									<section style="flex: 1; min-width: 300px; max-width: 45%; text-align: center;">
-										<a href="Resources/Donchian_Project_Report.pdf" download="Donchian Channel Breakout Project Report" class="icon major style3 fa-money-bill-alt" style="font-size: 2em; margin-bottom: 1em;" title="Download project report"></a>
-										<h3>Algorithmic Trading Strategy</h3>
+									<section style="flex: 1; min-width: 300px; max-width: 30%; text-align: center;">
+										<a href="Resources/Donchian_Project_Report.pdf" download="Donchian Channel Breakout Project Report" class="icon major style3 fa-money-bill-alt" style="font-size: 2em; margin-bottom: 1em;" title="Download Project Report"></a>
+										<h3><a href="Resources/Donchian_Project_Report.pdf" download="Donchian Channel Breakout Project Report" title="Download Project Report">Algorithmic Trading Strategy</a></h3>
 										<p style="text-align: justify;">Development and optimization of the Donchian Channel Breakout Trading Strategy for the Ethereum Market (ETHUSDT).</p>
+									</section>
+									<section style="flex: 1; min-width: 300px; max-width: 30%; text-align: center;">
+										<a href="Resources/Monte_Carlo_Project_Report.pdf" download="Monte Carlo Project Report" class="icon major style2 fa-futbol" style="font-size: 2em; margin-bottom: 1em;" title="Download Project Report"></a>
+										<h3><a href="Resources/Monte_Carlo_Project_Report.pdf" download="Monte Carlo Project Report" title="Download Project Report">Monte Carlo Simulation of the 2024/25 UCL Knockout Stage</a></h3>
+										<p style="text-align: justify;">Forecasting UEFA Champions League outcomes and developing an optimal betting strategy through Monte Carlo simulation and Elo ratings.</p>
 									</section>
 								</div>
 							</section>
@@ -232,9 +237,7 @@
 			</div>
 
 		<!-- Back to Top Button -->
-		<button id="backToTop" class="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99; background: rgba(255, 255, 255, 0.1); color: white; border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; transition: all 0.3s ease;">
-			<i class="fas fa-arrow-up"></i>
-		</button>
+		<a id="back-to-top" href="#" title="Back to top">↑</a>
 
 		<!-- Scripts -->
 			<script>
@@ -264,13 +267,13 @@
 				// Back to Top Button Functionality
 				window.onscroll = function() {
 					if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-						document.getElementById("backToTop").style.display = "block";
+						document.getElementById("back-to-top").style.display = "block";
 					} else {
-						document.getElementById("backToTop").style.display = "none";
+						document.getElementById("back-to-top").style.display = "none";
 					}
 				};
 
-				document.getElementById("backToTop").addEventListener("click", function() {
+				document.getElementById("back-to-top").addEventListener("click", function() {
 					window.scrollTo({
 						top: 0,
 						behavior: "smooth"
