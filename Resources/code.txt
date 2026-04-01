@@ -1,0 +1,91 @@
+* =============================================================================
+* ACS Employment by Occupation within BEA Detail Industries
+*
+* Inputs:  acs_analysis.dta                  (from R concordance script)
+*          acs_bea_concordance.csv            (concordance table)
+*          critical_industry_input_rankings.dta
+*
+* Output:  employment_by_industry_occp.dta / .csv
+* =============================================================================
+
+* ── 1. Pull the list of target BEA industries ─────────────────────────────────
+
+use critical_industry_input_rankings.dta, clear
+keep industryindustry
+duplicates drop
+tempfile target_industries
+save `target_industries'
+
+
+* ── 2. Load concordance and keep only target industries ──────────────────────
+* Doing this before merging onto the ACS avoids carrying the full concordance
+* fan-out into a large person-level file.
+
+import delimited using acs_bea_concordance.csv, stringcols(_all) clear
+
+rename bea_detail industryindustry
+merge m:1 industryindustry using `target_industries', keep(match) nogenerate
+
+* Drop unusable matches — fractional weighting across >15 industries
+* is not meaningful. Remove this line to include them and compare.
+drop if match_quality == "unusable"
+
+keep industryindustry indnaics_str match_quality n_bea
+tempfile concordance_filtered
+save `concordance_filtered'
+
+
+* ── 3. Load ACS, merge filtered concordance, apply sample restrictions ────────
+
+use acs_analysis.dta, clear
+
+* svyset for replicate-weight variance estimation
+* IPUMS ACS uses successive difference replication (SDR)
+svyset [pw=perwt], sdrweight(repwtp1-repwtp80) vce(sdr) mse
+
+* Merge concordance — only keeps persons in target industries
+merge m:1 indnaics_str using `concordance_filtered', keep(match) nogenerate
+
+* Fractional person weight: person's weight split across n_bea matched industries
+* This prevents double-counting when one ACS industry fans out to multiple BEA
+* industries. For clean/acceptable matches where n_bea=1, perwt_adj = perwt.
+gen perwt_adj = perwt / n_bea
+
+
+* ── 4. Collapse to employment counts by BEA industry × occupation ─────────────
+* svy: mean/total respects the replicate weight structure for SEs.
+* For a simple weighted count table, collapse is sufficient; use svy: total
+* if you need publishable standard errors.
+
+* Option A: weighted count table (fast, no SEs)
+preserve
+collapse (sum) emp_count = perwt_adj, by(industryindustry occp)
+label variable emp_count "Weighted employment (fractional perwt)"
+sort industryindustry occp
+
+export delimited using employment_by_industry_occp.csv, replace
+save employment_by_industry_occp.dta, replace
+restore
+
+* Option B: svy: total with SEs by industry (slower, needed for inference)
+* Uncomment if you need standard errors on the employment totals.
+/*
+levelsof industryindustry, local(industries)
+foreach ind of local industries {
+    svy: total perwt_adj if industryindustry == "`ind'", over(occp)
+}
+*/
+
+
+* ── 5. Diagnostic: coverage check ────────────────────────────────────────────
+* How many target industries have at least one matched person?
+
+use employment_by_industry_occp.dta, clear
+levelsof industryindustry, local(matched)
+use `target_industries', clear
+gen matched = 0
+foreach ind of local matched {
+    replace matched = 1 if industryindustry == "`ind'"
+}
+tab matched
+list industryindustry if matched == 0
