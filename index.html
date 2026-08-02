@@ -4,15 +4,44 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 	<head>
 		<title>Ethan W. Robertson | Portfolio</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Ethan Robertson — B.S. Applied Mathematics and Economics at William &amp; Mary, 2027. Applied econometrics, time-series methods, and simulation." />
+		<meta name="author" content="Ethan W. Robertson" />
+
+		<link rel="canonical" href="https://ethan.science/" />
+		<link rel="alternate" hreflang="en" href="https://ethan.science/" />
+		<link rel="alternate" hreflang="fr" href="https://ethan.science/index_fr.html" />
+		<link rel="alternate" hreflang="x-default" href="https://ethan.science/" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Ethan W. Robertson" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:locale:alternate" content="fr_FR" />
+		<meta property="og:url" content="https://ethan.science/" />
+		<meta property="og:title" content="Ethan W. Robertson | Portfolio" />
+		<meta property="og:description" content="B.S. Applied Mathematics and Economics at William &amp; Mary, 2027. Applied econometrics, time-series methods, and simulation." />
+		<meta property="og:image" content="https://ethan.science/images/Portrait.jpg" />
+		<meta property="og:image:alt" content="Portrait of Ethan Robertson" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="Ethan W. Robertson | Portfolio" />
+		<meta name="twitter:description" content="B.S. Applied Mathematics and Economics at William &amp; Mary, 2027. Applied econometrics, time-series methods, and simulation." />
+		<meta name="twitter:image" content="https://ethan.science/images/Portrait.jpg" />
+
+		<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" href="images/Portrait.jpg" />
+
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		
+
 		<style>
+			body {
+				background-color: #2e3338;
+				background-image: none;
+			}
 			#back-to-top {
 				position: fixed;
 				bottom: 20px;
@@ -32,15 +61,44 @@
 			#back-to-top:hover {
 				background: rgba(255, 255, 255, 0.1);
 			}
+			.experience-list {
+				list-style: none;
+				padding: 0;
+			}
+			.experience-list li {
+				padding: 0 0 1.5em 0;
+				margin: 0 0 1.5em 0;
+				border-bottom: solid 1px rgba(210, 215, 217, 0.75);
+			}
+			.experience-list li:last-child {
+				padding-bottom: 0;
+				margin-bottom: 0;
+				border-bottom: 0;
+			}
+			.experience-list h3 {
+				margin-bottom: 0.25em;
+			}
+			.experience-meta {
+				display: block;
+				margin-bottom: 0.75em;
+				font-size: 0.7em;
+				font-weight: 600;
+				letter-spacing: 0.15em;
+				text-transform: uppercase;
+				color: #9fa3a7;
+			}
+			.experience-list p {
+				margin-bottom: 0;
+			}
+			p.content {
+				-moz-columns: auto;
+				-webkit-columns: auto;
+				-ms-columns: auto;
+				columns: auto;
+				text-align: left;
+			}
 		</style>
 		
-		<!-- Cookie Consent Banner -->
-		<div id="cookie-banner" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 400px; background: #222; color: white; padding: 15px; border-radius: 10px; text-align: center; z-index: 1000;">
-			<p>This site uses cookies to improve your experience. You can accept or reject non-essential cookies.</p>
-			<button id="accept-cookies" class="button accept-button">Accept</button>
-			<button id="reject-cookies" class="button reject-button">Reject</button>
-		</div>
-
 		<!-- Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-H2VW4JY0DL"></script>
 		<script>
@@ -48,44 +106,6 @@
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
 			gtag('config', 'G-H2VW4JY0DL');
-		</script>
-
-		<script>
-			async function checkUserLocation() {
-				try {
-					let consentGiven = localStorage.getItem("cookieConsent");
-					if (consentGiven) return;
-
-					let response = await fetch("https://ipinfo.io/json?token=6fa17a252a23c7");
-					let data = await response.json();
-					let euCountries = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"];
-
-					if (euCountries.includes(data.country)) {
-						document.getElementById("cookie-banner").style.display = "block";
-					} else {
-						enableTracking();
-					}
-				} catch (error) {
-					console.error("Error checking user location:", error);
-				}
-			}
-
-			document.getElementById("accept-cookies").addEventListener("click", function() {
-				localStorage.setItem("cookieConsent", "accepted");
-				document.getElementById("cookie-banner").style.display = "none";
-				enableTracking();
-			});
-
-			document.getElementById("reject-cookies").addEventListener("click", function() {
-				localStorage.setItem("cookieConsent", "rejected");
-				document.getElementById("cookie-banner").style.display = "none";
-			});
-
-			function enableTracking() {
-				// Tracking functionality can be added here
-			}
-
-			checkUserLocation();
 		</script>
 	</head>
 	<body class="is-preload">
@@ -106,6 +126,7 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="#intro" class="active">About Me</a></li>
+							<li><a href="#experience">Experience</a></li>
 							<li><a href="#featured">Featured Projects</a></li>
 							<li><a href="#second">Skills</a></li>
 							<li><a href="projects.html">All Projects</a></li>
@@ -122,20 +143,46 @@
 										<header class="major">
 											<h2>About Me</h2>
 										</header>
-										<p>I'm a Junior at the College of William & Mary pursuing a double major in 
-										Mathematics and Economics.  
-										I'm passionate about quantitative analysis, and I love applying
-										my skills in data analytics, applied mathematics, and econometrics to solve 
-										interesting problems that I've found!  Currently, I'm working as a Research Analyst 
-										on the China Development Finance Program team at AidData—a research lab at 
-										William & Mary.  In my free time, I enjoy reading, watching soccer, baking, and 
-										playing board games!</p>
+										<p>I'm a senior at the College of William &amp; Mary completing a B.S. in Applied
+										Mathematics and Economics, graduating in 2027 with a 3.90 GPA. My coursework includes
+										honors real analysis alongside substantial applied and pure mathematics.</p>
+										<p>My work is in applied econometrics — panel and time-series models, structural break
+										testing, and simulation. Last spring I worked on questions in trade, industrial
+										organization, and public finance at the Council of Economic Advisers; this summer I'm in
+										the Metrics group at The Brattle Group in Washington, DC.</p>
+										<p>Outside of that I read, bake — mostly laminated dough and bread — and collect board
+										games. I also follow Bayern Munich closely enough that it turned into a structural break
+										analysis of their managerial regimes.</p>
 										<ul class="actions">
-											<li><a href="Resources/Ethan_Robertson_Resume.pdf" download="Ethan Robertson Resume.pdf" class="download-btn">Download My Resume</a></li>
+											<li><a href="Resources/Ethan_Robertson_Resume.pdf" download="Ethan Robertson Resume.pdf" class="button">Download My Resume</a></li>
 										</ul>
 									</div>
-									<span class="image"><img src="images/Portrait.jpg" alt="" /></span>
+									<span class="image"><img src="images/Portrait.jpg" alt="Portrait of Ethan Robertson" /></span>
 								</div>
+							</section>
+
+						<!-- Experience -->
+							<section id="experience" class="main">
+								<header class="major">
+									<h2>Experience</h2>
+								</header>
+								<ul class="experience-list">
+									<li>
+										<h3>The Brattle Group</h3>
+										<span class="experience-meta">Metrics Group &middot; Washington, DC &middot; Summer 2026</span>
+										<p>Economic consulting in the Metrics group, supporting quantitative analysis on client matters.</p>
+									</li>
+									<li>
+										<h3>Council of Economic Advisers</h3>
+										<span class="experience-meta">Washington, DC &middot; Spring 2026</span>
+										<p>Research spanning trade, industrial organization, and public finance.</p>
+									</li>
+									<li>
+										<h3>AidData, William &amp; Mary</h3>
+										<span class="experience-meta">Research Assistant, China Development Finance Program</span>
+										<p>Extracted and validated West African and Chinese financial data in R.</p>
+									</li>
+								</ul>
 							</section>
 
 						<!-- Featured Projects -->
@@ -145,20 +192,17 @@
 									<p>Check out my <a href="projects.html">complete portfolio</a> for more projects</p>
 								</header>
 								<div class="features" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2em;">
-									<section style="flex: 1; min-width: 300px; max-width: 30%; text-align: center;">
-										<a href="Resources/Fama-MacBeth_Project_Report.pdf" download="Macro Sensitivity Project Report" class="icon solid major style5 fa-file-alt" style="font-size: 2em; margin-bottom: 1em;" title="Download Project Report"></a>
+									<section style="flex: 1; min-width: 300px; max-width: 30%; text-align: left;">
 										<h3><a href="Resources/Fama-MacBeth_Project_Report.pdf" download="Macro Sensitivity Project Report" title="Download Project Report">Macro Sensitivity Analysis</a></h3>
-										<p style="text-align: justify;">An in-depth analysis of financial and banking firms, identifying investment opportunities in today's market through advanced statistical modeling and macroeconomic factor analysis.</p>
+										<p>Fama-MacBeth two-pass regression estimating the sensitivity of 316 U.S. financial and banking firms to macroeconomic factors. Implemented in R.</p>
 									</section>
-									<section style="flex: 1; min-width: 300px; max-width: 30%; text-align: center;">
-										<a href="Resources/Donchian_Project_Report.pdf" download="Donchian Channel Breakout Project Report" class="icon major style3 fa-money-bill-alt" style="font-size: 2em; margin-bottom: 1em;" title="Download Project Report"></a>
+									<section style="flex: 1; min-width: 300px; max-width: 30%; text-align: left;">
 										<h3><a href="Resources/Donchian_Project_Report.pdf" download="Donchian Channel Breakout Project Report" title="Download Project Report">Algorithmic Trading Strategy</a></h3>
-										<p style="text-align: justify;">Development and optimization of the Donchian Channel Breakout Trading Strategy for the Ethereum Market (ETHUSDT).</p>
+										<p>Development and optimization of the Donchian Channel Breakout Trading Strategy for the Ethereum Market (ETHUSDT).</p>
 									</section>
-									<section style="flex: 1; min-width: 300px; max-width: 30%; text-align: center;">
-										<a href="Resources/Monte_Carlo_Project_Report.pdf" download="Monte Carlo Project Report" class="icon major style2 fa-futbol" style="font-size: 2em; margin-bottom: 1em;" title="Download Project Report"></a>
+									<section style="flex: 1; min-width: 300px; max-width: 30%; text-align: left;">
 										<h3><a href="Resources/Monte_Carlo_Project_Report.pdf" download="Monte Carlo Project Report" title="Download Project Report">Monte Carlo Simulation of the 2024/25 UCL Knockout Stage</a></h3>
-										<p style="text-align: justify;">Forecasting UEFA Champions League outcomes and developing an optimal betting strategy through Monte Carlo simulation and Elo ratings.</p>
+										<p>Forecasting UEFA Champions League outcomes and developing an optimal betting strategy through Monte Carlo simulation and Elo ratings.</p>
 									</section>
 								</div>
 							</section>
@@ -171,29 +215,9 @@
 									posuere. Nulla massa urna, fermentum eget quam aliquet.</p> 
 									-->
 								</header>
-								<ul class="statistics">
-									<li class="style1">
-										<span class="icon solid fa-comments"></span>
-										<strong>French</strong>
-									</li>
-									<li class="style2">
-										<span class="icon solid fa-code-branch"></span>
-										<strong>Python</strong>
-									</li>
-									<li class="style3">
-										<span class="icon solid fa-chart-bar"></span>
-										<strong>R</strong>
-									</li>
-									<li class="style4">
-										<span class="icon solid fa-laptop"></span>
-										<strong>Stata</strong>
-									</li>
-									<li class="style5">
-										<span class="icon solid fa-table"></span>
-										<strong>Excel</strong>
-									</li>
-								</ul>
-								<p class="content">With a strong foundation in quantitative analysis, statistical modeling, and financial research, I bring expertise in Python, R, and Stata for data-driven decision-making.  My proficiencies in econometrics, applied mathematics, and operations research allow me to develop predictive models and conduct advanced financial analysis.  I am also skilled in Excel-based financial modeling and corporate valuation through workshops with Training the Street.  Through my technical skills I possess the skills to extract meaningful insights from complex datasets, whether in quantitative finance, development finance, or sports analytics.  I excel in solving complex problems, and I love to leverage my skills whenever and however I can!</p>
+								<p class="content">My methods work is in applied econometrics — panel and time-series models, count models, structural break testing, and local projections — alongside Monte Carlo simulation and rating systems. I work primarily in R and Python, use Stata for panel data, and write in LaTeX. Applied work has included factor-sensitivity estimation, trade-elasticity and industry-concordance construction, and simulation-based forecasting, along with Excel financial modeling and corporate valuation through Training the Street workshops.</p>
+								<p class="content">I run my own research infrastructure: a self-hosted OpenMediaVault server with a Docker stack that includes RStudio Server and a containerized LaTeX environment, networked over Tailscale with ACLs and subnet routing and exposed selectively through Cloudflare Tunnels. My analysis environment and writing toolchain are versioned and reproducible rather than living on a laptop.</p>
+								<p class="content">French — fluent, DELF B2. I studied in Strasbourg and wrote bilingual equity research at ACE Finance et Conseil.</p>
 								<footer class="major">
 									<ul class="actions special">
 										<li><a href="mailto:erobertson753@outlook.com" class="button">Contact Me</a></li>
@@ -214,8 +238,8 @@
 									<li><a href="Resources/Ethan_Robertson_Resume.pdf" download="Ethan Robertson Resume.pdf" class="button">Download My Resume</a></li>
 								</ul>
 								<div style="margin-top: 1em;">
-									<a href="https://www.linkedin.com/in/robertsonethan/" target="_blank" class="icon brands fa-linkedin" style="font-size: 1.5em; margin-right: 0.5em;" title="LinkedIn"></a>
-									<a href="https://github.com/erobertson753" target="_blank" class="icon brands fa-github" style="font-size: 1.5em;" title="GitHub"></a>
+									<a href="https://www.linkedin.com/in/robertsonethan/" target="_blank" rel="noopener" class="icon brands fa-linkedin" style="font-size: 1.5em; margin-right: 0.5em;" title="LinkedIn" aria-label="LinkedIn"></a>
+									<a href="https://github.com/erobertson753" target="_blank" rel="noopener" class="icon brands fa-github" style="font-size: 1.5em;" title="GitHub" aria-label="GitHub"></a>
 								</div>
 							</section>
 						</section>

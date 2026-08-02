@@ -4,20 +4,100 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="fr">
 	<head>
 		<title>Ethan W. Robertson | Portfolio</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Ethan Robertson — B.S. en Mathématiques Appliquées et Économie à William &amp; Mary, 2027. Économétrie appliquée, séries temporelles et simulation." />
+		<meta name="author" content="Ethan W. Robertson" />
+
+		<link rel="canonical" href="https://ethan.science/index_fr.html" />
+		<link rel="alternate" hreflang="en" href="https://ethan.science/" />
+		<link rel="alternate" hreflang="fr" href="https://ethan.science/index_fr.html" />
+		<link rel="alternate" hreflang="x-default" href="https://ethan.science/" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Ethan W. Robertson" />
+		<meta property="og:locale" content="fr_FR" />
+		<meta property="og:locale:alternate" content="en_US" />
+		<meta property="og:url" content="https://ethan.science/index_fr.html" />
+		<meta property="og:title" content="Ethan W. Robertson | Portfolio" />
+		<meta property="og:description" content="B.S. en Mathématiques Appliquées et Économie à William &amp; Mary, 2027. Économétrie appliquée, séries temporelles et simulation." />
+		<meta property="og:image" content="https://ethan.science/images/Portrait.jpg" />
+		<meta property="og:image:alt" content="Portrait d'Ethan Robertson" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="Ethan W. Robertson | Portfolio" />
+		<meta name="twitter:description" content="B.S. en Mathématiques Appliquées et Économie à William &amp; Mary, 2027. Économétrie appliquée, séries temporelles et simulation." />
+		<meta name="twitter:image" content="https://ethan.science/images/Portrait.jpg" />
+
+		<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" href="images/Portrait.jpg" />
+
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		
-		<!-- Cookie Consent Banner -->
-		<div id="cookie-banner" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 400px; background: #222; color: white; padding: 15px; border-radius: 10px; text-align: center; z-index: 1000;">
-			<p>Ce site utilise des cookies pour améliorer votre expérience. Vous pouvez accepter ou refuser les cookies non essentiels.</p>
-			<button id="accept-cookies" class="button accept-button">Accepter</button>
-			<button id="reject-cookies" class="button reject-button">Refuser</button>
-		</div>
+
+		<style>
+			body {
+				background-color: #2e3338;
+				background-image: none;
+			}
+			#back-to-top {
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				display: none;
+				background: rgba(255, 255, 255, 0.05);
+				color: white;
+				width: 50px;
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+				border-radius: 25px;
+				cursor: pointer;
+				box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+				transition: all 0.2s ease-in-out;
+			}
+			#back-to-top:hover {
+				background: rgba(255, 255, 255, 0.1);
+			}
+			.experience-list {
+				list-style: none;
+				padding: 0;
+			}
+			.experience-list li {
+				padding: 0 0 1.5em 0;
+				margin: 0 0 1.5em 0;
+				border-bottom: solid 1px rgba(210, 215, 217, 0.75);
+			}
+			.experience-list li:last-child {
+				padding-bottom: 0;
+				margin-bottom: 0;
+				border-bottom: 0;
+			}
+			.experience-list h3 {
+				margin-bottom: 0.25em;
+			}
+			.experience-meta {
+				display: block;
+				margin-bottom: 0.75em;
+				font-size: 0.7em;
+				font-weight: 600;
+				letter-spacing: 0.15em;
+				text-transform: uppercase;
+				color: #9fa3a7;
+			}
+			.experience-list p {
+				margin-bottom: 0;
+			}
+			p.content {
+				-moz-columns: auto;
+				-webkit-columns: auto;
+				-ms-columns: auto;
+				columns: auto;
+				text-align: left;
+			}
+		</style>
 
 		<!-- Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-H2VW4JY0DL"></script>
@@ -26,44 +106,6 @@
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
 			gtag('config', 'G-H2VW4JY0DL');
-		</script>
-
-		<script>
-			async function checkUserLocation() {
-				try {
-					let consentGiven = localStorage.getItem("cookieConsent");
-					if (consentGiven) return;
-
-					let response = await fetch("https://ipinfo.io/json?token=6fa17a252a23c7");
-					let data = await response.json();
-					let euCountries = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"];
-
-					if (euCountries.includes(data.country)) {
-						document.getElementById("cookie-banner").style.display = "block";
-					} else {
-						enableTracking();
-					}
-				} catch (error) {
-					console.error("Error checking user location:", error);
-				}
-			}
-
-			document.getElementById("accept-cookies").addEventListener("click", function() {
-				localStorage.setItem("cookieConsent", "accepted");
-				document.getElementById("cookie-banner").style.display = "none";
-				enableTracking();
-			});
-
-			document.getElementById("reject-cookies").addEventListener("click", function() {
-				localStorage.setItem("cookieConsent", "rejected");
-				document.getElementById("cookie-banner").style.display = "none";
-			});
-
-			function enableTracking() {
-				// Tracking functionality can be added here
-			}
-
-			checkUserLocation();
 		</script>
 	</head>
 	<body class="is-preload">
@@ -83,6 +125,7 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="#intro" class="active">À propos</a></li>
+							<li><a href="#experience">Expérience</a></li>
 							<li><a href="#featured">Projets en vedette</a></li>
 							<li><a href="#second">Compétences</a></li>
 							<li><a href="projects_fr.html">Tous mes projets</a></li>
@@ -99,20 +142,49 @@
 										<header class="major">
 											<h2>À propos de moi</h2>
 										</header>
-										<p>Je suis étudiant en deuxième année au College of William & Mary, où je poursuis une double majeure en 
-										Mathématiques et Économie.  
-										Je suis passionné par l'analyse quantitative, et j'aime appliquer
-										mes compétences en analyse de données, mathématiques appliquées et économétrie pour résoudre 
-										des problèmes intéressants ! Actuellement, je travaille comme Analyste de Recherche 
-										dans l'équipe du Programme de Financement du Développement en Chine à AidData—un laboratoire de recherche 
-										à William & Mary.  Pendant mon temps libre, j'aime lire, regarder le football, faire de la pâtisserie et 
-										jouer à des jeux de société !</p>
+										<p>Je suis en dernière année au College of William &amp; Mary, où je prépare un B.S. en
+										Mathématiques Appliquées et Économie, avec une obtention du diplôme prévue en 2027 et une
+										moyenne générale de 3,90. Mon cursus comprend un cours d'analyse réelle niveau honors ainsi
+										qu'un socle important de mathématiques appliquées et pures.</p>
+										<p>Mon travail porte sur l'économétrie appliquée — modèles de panel et de séries
+										temporelles, tests de rupture structurelle et simulation. Au printemps dernier, j'ai
+										travaillé sur des questions de commerce international, d'organisation industrielle et de
+										finances publiques au Council of Economic Advisers ; cet été, je travaille au sein du
+										groupe Metrics de The Brattle Group à Washington, DC.</p>
+										<p>En dehors de cela, je lis, je fais de la pâtisserie — surtout des pâtes feuilletées et
+										du pain — et je collectionne les jeux de société. Je suis aussi le Bayern Munich d'assez
+										près pour en avoir tiré une analyse des ruptures structurelles entre les périodes de ses
+										entraîneurs.</p>
 										<ul class="actions">
-											<li><a href="Resources/Ethan_Robertson_Resume.pdf" download="Ethan Robertson Resume.pdf" class="download-btn">Télécharger mon CV</a></li>
+											<li><a href="Resources/Ethan_Robertson_Resume.pdf" download="Ethan Robertson Resume.pdf" class="button">Télécharger mon CV</a></li>
 										</ul>
 									</div>
-									<span class="image"><img src="images/Portrait.jpg" alt="" /></span>
+									<span class="image"><img src="images/Portrait.jpg" alt="Portrait d'Ethan Robertson" /></span>
 								</div>
+							</section>
+
+						<!-- Experience -->
+							<section id="experience" class="main">
+								<header class="major">
+									<h2>Expérience</h2>
+								</header>
+								<ul class="experience-list">
+									<li>
+										<h3>The Brattle Group</h3>
+										<span class="experience-meta">Groupe Metrics &middot; Washington, DC &middot; Été 2026</span>
+										<p>Conseil économique au sein du groupe Metrics, en appui sur l'analyse quantitative de dossiers clients.</p>
+									</li>
+									<li>
+										<h3>Council of Economic Advisers</h3>
+										<span class="experience-meta">Washington, DC &middot; Printemps 2026</span>
+										<p>Recherche sur le commerce international, l'organisation industrielle et les finances publiques.</p>
+									</li>
+									<li>
+										<h3>AidData, William &amp; Mary</h3>
+										<span class="experience-meta">Assistant de recherche, Programme de Financement du Développement en Chine</span>
+										<p>Extraction et validation de données financières ouest-africaines et chinoises en R.</p>
+									</li>
+								</ul>
 							</section>
 
 						<!-- Featured Projects -->
@@ -122,20 +194,17 @@
 									<p>Découvrez mon <a href="projects_fr.html">portfolio complet</a> pour plus de projets</p>
 								</header>
 								<div class="features" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2em;">
-									<section style="flex: 1; min-width: 300px; max-width: 30%; text-align: center;">
-										<a href="Resources/Fama-MacBeth_Project_Report_FR.pdf" download="Macro Sensitivity Project Report" class="icon solid major style5 fa-file-alt" style="font-size: 2em; margin-bottom: 1em;" title="Télécharger le rapport du projet"></a>
+									<section style="flex: 1; min-width: 300px; max-width: 30%; text-align: left;">
 										<h3><a href="Resources/Fama-MacBeth_Project_Report_FR.pdf" download="Macro Sensitivity Project Report" title="Télécharger le rapport du projet">Analyse de Sensibilité Macro</a></h3>
-										<p style="text-align: justify;">Une analyse approfondie des entreprises financières et bancaires, identifiant les opportunités d'investissement sur le marché actuel grâce à une modélisation statistique avancée et une analyse des facteurs macroéconomiques.</p>
+										<p>Régression en deux étapes de Fama-MacBeth estimant la sensibilité de 316 entreprises financières et bancaires américaines aux facteurs macroéconomiques. Implémentée en R.</p>
 									</section>
-									<section style="flex: 1; min-width: 300px; max-width: 30%; text-align: center;">
-										<a href="Resources/Donchian_Project_Report_FR.pdf" download="Donchian Channel Breakout Project Report" class="icon major style3 fa-money-bill-alt" style="font-size: 2em; margin-bottom: 1em;" title="Télécharger le rapport du projet"></a>
+									<section style="flex: 1; min-width: 300px; max-width: 30%; text-align: left;">
 										<h3><a href="Resources/Donchian_Project_Report_FR.pdf" download="Donchian Channel Breakout Project Report" title="Télécharger le rapport du projet">Stratégie de Trading Algorithmique</a></h3>
-										<p style="text-align: justify;">Développement et optimisation de la stratégie de trading Donchian Channel Breakout pour le marché Ethereum (ETHUSDT).</p>
+										<p>Développement et optimisation de la stratégie de trading Donchian Channel Breakout pour le marché Ethereum (ETHUSDT).</p>
 									</section>
-									<section style="flex: 1; min-width: 300px; max-width: 30%; text-align: center;">
-										<a href="Resources/Monte_Carlo_Project_Report.pdf" download="Monte Carlo Project Report" class="icon major style2 fa-futbol" style="font-size: 2em; margin-bottom: 1em;" title="Télécharger le rapport du projet"></a>
-										<h3><a href="Resources/Monte_Carlo_Project_Report.pdf" download="Monte Carlo Project Report" title="Télécharger le rapport du projet">Simulation Monte Carlo de la Phase Finale de l'UCL 2024/25</a></h3>
-										<p style="text-align: justify;">Prévision des résultats de la Ligue des Champions de l'UEFA et développement d'une stratégie de paris optimale par simulation Monte Carlo et cotes Elo.</p>
+									<section style="flex: 1; min-width: 300px; max-width: 30%; text-align: left;">
+										<h3><a href="Resources/Monte_Carlo_Project_Report_FR.pdf" download="Rapport du Projet Monte Carlo" title="Télécharger le rapport du projet">Simulation Monte Carlo de la Phase Finale de l'UCL 2024/25</a></h3>
+										<p>Prévision des résultats de la Ligue des Champions de l'UEFA et développement d'une stratégie de paris optimale par simulation Monte Carlo et cotes Elo.</p>
 									</section>
 								</div>
 							</section>
@@ -145,29 +214,9 @@
 								<header class="major">
 									<h2>Mes compétences</h2>
 								</header>
-								<ul class="statistics">
-									<li class="style1">
-										<span class="icon solid fa-comments"></span>
-										<strong>Français</strong> Courant
-									</li>
-									<li class="style2">
-										<span class="icon solid fa-code-branch"></span>
-										<strong>Python</strong> Compétent
-									</li>
-									<li class="style3">
-										<span class="icon solid fa-chart-bar"></span>
-										<strong>R</strong> Compétent
-									</li>
-									<li class="style4">
-										<span class="icon solid fa-laptop"></span>
-										<strong>SQL</strong> Compétent
-									</li>
-									<li class="style5">
-										<span class="icon solid fa-table"></span>
-										<strong>Excel</strong> Compétent
-									</li>
-								</ul>
-								<p class="content">Avec une solide base en analyse quantitative, modélisation statistique et recherche financière, je maîtrise Python, R et SQL pour la prise de décision basée sur les données. Mes compétences en économétrie, mathématiques appliquées et recherche opérationnelle me permettent de développer des modèles prédictifs et de mener des analyses financières avancées. Je suis également compétent en modélisation financière sur Excel et en évaluation d'entreprise grâce à des ateliers avec Training the Street. Grâce à mes compétences techniques, je peux extraire des informations significatives de jeux de données complexes, que ce soit dans la finance quantitative, le financement du développement ou l'analyse sportive. J'excelle dans la résolution de problèmes complexes, et j'aime mettre à profit mes compétences chaque fois que possible !</p>
+								<p class="content">Mon travail méthodologique porte sur l'économétrie appliquée — modèles de panel et de séries temporelles, modèles de comptage, tests de rupture structurelle et projections locales — ainsi que sur la simulation Monte Carlo et les systèmes de classement. Je travaille principalement en R et en Python, j'utilise Stata pour les données de panel et je rédige en LaTeX. Mes travaux appliqués ont porté sur l'estimation de sensibilités factorielles, les élasticités du commerce et la construction de tables de concordance sectorielles, ainsi que sur la prévision par simulation, en plus de la modélisation financière sur Excel et de l'évaluation d'entreprise via les ateliers Training the Street.</p>
+								<p class="content">Je gère ma propre infrastructure de recherche : un serveur OpenMediaVault auto-hébergé avec une pile Docker comprenant RStudio Server et un environnement LaTeX conteneurisé, en réseau via Tailscale avec ACL et routage de sous-réseaux, exposé de façon sélective par des Cloudflare Tunnels. Mon environnement d'analyse et ma chaîne de rédaction sont ainsi versionnés et reproductibles plutôt que confinés à un ordinateur portable.</p>
+								<p class="content">Français — courant, DELF B2. J'ai étudié à Strasbourg et rédigé des analyses actions bilingues chez ACE Finance et Conseil.</p>
 								<footer class="major">
 									<ul class="actions special">
 										<li><a href="mailto:erobertson753@outlook.com" class="button">Contactez-moi</a></li>
@@ -184,8 +233,8 @@
 								<li><a href="Resources/Ethan_Robertson_Resume.pdf" download="Ethan Robertson Resume.pdf" class="button">Télécharger mon CV</a></li>
 							</ul>
 							<div style="margin-top: 1em;">
-								<a href="https://www.linkedin.com/in/robertsonethan/" target="_blank" class="icon brands fa-linkedin" style="font-size: 1.5em; margin-right: 0.5em;" title="LinkedIn"></a>
-								<a href="https://github.com/erobertson753" target="_blank" class="icon brands fa-github" style="font-size: 1.5em;" title="GitHub"></a>
+								<a href="https://www.linkedin.com/in/robertsonethan/" target="_blank" rel="noopener" class="icon brands fa-linkedin" style="font-size: 1.5em; margin-right: 0.5em;" title="LinkedIn" aria-label="LinkedIn"></a>
+								<a href="https://github.com/erobertson753" target="_blank" rel="noopener" class="icon brands fa-github" style="font-size: 1.5em;" title="GitHub" aria-label="GitHub"></a>
 							</div>
 						</section>
 						<section>
